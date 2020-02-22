@@ -1,0 +1,1 @@
+{"contents":[{"name":"Joseph","sp":"wtf.jpg","effect":"wtf.mp3","detail":[{"text":"hello","speed":1.0,"color":"#FF0000"},{"text":"world","speed":2.0,"color":"#000000"}],"choice":[{"text":"1","next":[0]}],"default_next":[2],"condition":"wryyyy"}]}
