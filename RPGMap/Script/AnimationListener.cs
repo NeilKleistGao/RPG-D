@@ -2,19 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MapNavigationPin : MonoBehaviour
+public class AnimationListener : MonoBehaviour
 {
-    public Sprite inactive_icon, active_icon;
-    public int next;
+    private GameMap parent;
     // Start is called before the first frame update
     void Start()
     {
-        
+        parent = transform.parent.GetComponent<GameMap>();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void end()
+    {
+        parent.endCallback();
     }
 }
