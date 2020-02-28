@@ -22,10 +22,12 @@ public class GameMap : MonoBehaviour
     private Stack<int> stack = new Stack<int>();
     public MapLayer[] layers;
     private Animator back_animation, front_animation;
+    private GameObject player_icon;
 
     // Start is called before the first frame update
     void Start()
     {
+        player_icon = transform.Find("PlayerIcon").gameObject;
         back_button = transform.Find("Back").GetComponent<Button>();
         back_animation = transform.Find("Background").GetComponent<Animator>();
         front_animation = transform.Find("Map").GetComponent<Animator>();
@@ -77,6 +79,14 @@ public class GameMap : MonoBehaviour
             {
                 image.color = new Color(temp.r, temp.g, temp.b, 0);
             }
+        }
+
+        bool active = stat && layers[index].map_pins.Length == 0;
+        player_icon.SetActive(active);
+        if (active)
+        {
+            player_icon.GetComponent<RectTransform>().position = new Vector3(player_detail_position.x, player_detail_position.y, 0);
+            Debug.Log(player_icon.GetComponent<RectTransform>().position);
         }
     }
 
